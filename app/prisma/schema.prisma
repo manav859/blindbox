@@ -1,0 +1,71 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Shop {
+  id               String   @id @default(uuid())
+  myshoplineDomain String   @unique
+  accessToken      String
+  scopes           String?
+  installedAt      DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+  
+  blindBoxes       BlindBox[]
+  webhooks         WebhookEvent[]
+}
+
+model BlindBox {
+  id        String   @id @default(uuid())
+  shopId    String
+  productId String   @unique // The target SHOPLINE product
+  name      String
+  status    String   @default("ACTIVE")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  shop      Shop     @relation(fields: [shopId], references: [id], onDelete: Cascade)
+  items     BlindBoxItem[]
+  assignments Assignment[]
+}
+
+model BlindBoxItem {
+  id                 String   @id @default(uuid())
+  blindBoxId         String
+  shoplineVariantId  String 
+  name               String
+  weight             Int      @default(1)
+  inventory          Int      @default(0)
+  enabled            Boolean  @default(true)
+  
+  blindBox           BlindBox @relation(fields: [blindBoxId], references: [id], onDelete: Cascade)
+  assignments        Assignment[]
+}
+
+model Assignment {
+  id          String   @id @default(uuid())
+  blindBoxId  String
+  itemId      String
+  orderId     String   // The SHOPLINE order id 
+  status      String   @default("COMPLETED")
+  createdAt   DateTime @default(now())
+  
+  blindBox    BlindBox @relation(fields: [blindBoxId], references: [id], onDelete: Cascade)
+  item        BlindBoxItem @relation(fields: [itemId], references: [id])
+}
+
+model WebhookEvent {
+  id              String   @id @default(uuid())
+  shopId          String
+  shoplineEventId String   @unique
+  topic           String
+  payload         String   // JSON payload to allow replays or debug
+  status          String   @default("PENDING") // PENDING, COMPLETED
+  processedAt     DateTime @default(now())
+  
+  shop            Shop     @relation(fields: [shopId], references: [id], onDelete: Cascade)
+}

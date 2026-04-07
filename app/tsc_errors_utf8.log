@@ -1,0 +1,6 @@
+﻿src/core/db/index.ts(1,10): error TS2305: Module '"@prisma/client"' has no exported member 'PrismaClient'.
+src/core/middleware/error-handler.ts(17,22): error TS2339: Property 'errors' does not exist on type 'ZodError<unknown>'.
+src/modules/blind-box-assignment/assignment.service.ts(4,15): error TS2305: Module '"@prisma/client"' has no exported member 'BlindBoxItem'.
+src/modules/blind-box-assignment/assignment.service.ts(81,57): error TS7006: Parameter 'tx' implicitly has an 'any' type.
+src/modules/storefront/storefront.route.ts(24,38): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/modules/storefront/storefront.route.ts(58,39): error TS7006: Parameter 'a' implicitly has an 'any' type.

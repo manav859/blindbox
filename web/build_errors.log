@@ -1,0 +1,40 @@
+﻿
+> blindbox-web@1.0.0 build
+> tsc && vite build
+
+src/App.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/Dashboard.tsx(1,1): error TS6133: 'React' is declared but its value is never read.
+node.exe : npm error 
+Lifecycle script `build` 
+failed with error:
+At C:\Users\manav\AppData\
+Roaming\npm\npm.ps1:24 
+char:5
++     & "node$exe"  "$base
+dir/node_modules/npm/bin/n
+pm-cli.js" $args
++     ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (n  
+  pm error Lifec...led    
+ with error::String) [    
+], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+npm error code 2
+npm error path D:\work\sho
+pline\blind-box-theme-os3\
+blindbox-app\web
+npm error workspace 
+blindbox-web@1.0.0
+npm error location D:\work
+\shopline\blind-box-theme-
+os3\blindbox-app\web
+npm error command failed
+npm error command C:\WINDO
+WS\system32\cmd.exe /d /s 
+/c tsc && vite build

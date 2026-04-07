@@ -1,0 +1,40 @@
+﻿
+> blindbox-backend@1.0.0 build
+> tsc
+
+tsconfig.json(5,25): error TS5107: Option 'moduleResolution=node10' is deprecated and will stop functioning in TypeScript 7.0. Specify compilerOption '"ignoreDeprecations": "6.0"' to silence this error.
+  Visit https://aka.ms/ts6 for migration information.
+node.exe : npm error 
+Lifecycle script `build` 
+failed with error:
+At C:\Users\manav\AppData\
+Roaming\npm\npm.ps1:24 
+char:5
++     & "node$exe"  "$base
+dir/node_modules/npm/bin/n
+pm-cli.js" $args
++     ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (n  
+  pm error Lifec...led    
+ with error::String) [    
+], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+npm error code 2
+npm error path D:\work\sho
+pline\blind-box-theme-os3\
+blindbox-app\app
+npm error workspace 
+blindbox-backend@1.0.0
+npm error location D:\work
+\shopline\blind-box-theme-
+os3\blindbox-app\app
+npm error command failed
+npm error command C:\WINDO
+WS\system32\cmd.exe /d /s 
+/c tsc

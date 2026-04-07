@@ -1,0 +1,24 @@
+{
+  "name": "shopline-blindbox-app",
+  "private": true,
+  "version": "1.0.0",
+  "description": "SHOPLINE Blind Box App MVP",
+  "workspaces": [
+    "app",
+    "web"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces",
+    "build": "npm run build --workspaces",
+    "lint": "npm run lint --workspaces"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.96.2",
+    "autoprefixer": "^10.4.27",
+    "axios": "^1.14.0",
+    "lucide-react": "^1.7.0",
+    "postcss": "^8.5.8",
+    "react-router-dom": "^7.14.0",
+    "tailwindcss": "^4.2.2"
+  }
+}
