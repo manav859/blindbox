@@ -6,6 +6,8 @@ import { logger } from './core/logger/index.js';
 import { errorHandler } from './core/middleware/error-handler.js';
 import { requestLogger } from './core/middleware/request-logger.js';
 
+import fastifyRawBody from 'fastify-raw-body';
+
 // Module routes
 import { healthRoutes } from './modules/health/health.route.js';
 import { authRoutes } from './modules/auth/auth.route.js';
@@ -24,6 +26,12 @@ export async function buildServer() {
   // ---------- plugins ----------
   await app.register(cors, { origin: true, credentials: true });
   await app.register(formbody);
+  await app.register(fastifyRawBody, {
+    field: 'rawBody',
+    global: true,
+    encoding: 'utf8',
+    runFirst: true
+  });
 
   // ---------- hooks ----------
   app.addHook('onRequest', requestLogger);

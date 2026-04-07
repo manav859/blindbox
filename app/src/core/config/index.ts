@@ -8,7 +8,8 @@ const envSchema = z.object({
   DATABASE_URL: z.string().min(1, 'DATABASE_URL is required'),
   SHOPLINE_APP_KEY: z.string().min(1, 'SHOPLINE_APP_KEY is required'),
   SHOPLINE_APP_SECRET: z.string().min(1, 'SHOPLINE_APP_SECRET is required'),
-  HOST_URL: z.string().url('HOST_URL must be a valid URL'),
+  HOST_URL: z.string().url('HOST_URL must be a valid URL').transform((u) => u.replace(/\/$/, '')),
+  FRONTEND_URL: z.string().url('FRONTEND_URL must be a valid URL').transform((u) => u.replace(/\/$/, '')),
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development'),
 });
 

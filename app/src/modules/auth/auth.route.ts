@@ -59,7 +59,7 @@ export async function authRoutes(app: FastifyInstance) {
       // await shopService.upsertShop({ domain: shop, accessToken: token, scopes });
 
       // Redirect merchant to Admin UI
-      return reply.redirect(`${config.HOST_URL}/admin`);
+      return reply.redirect(`${config.FRONTEND_URL}/admin`);
     } catch (err) {
       logger.error({ err }, 'OAuth callback failed');
       return reply.status(500).send({ error: 'Authentication failed' });

@@ -33,8 +33,8 @@ export async function webhookRoutes(app: FastifyInstance) {
     const eventId = request.headers['x-shopline-delivery-id'] as string;
     const shopDomain = request.headers['x-shopline-shop-domain'] as string;
     
-    // In a real app we need the raw body text. Assuming it's verified here.
-    const rawBody = JSON.stringify(request.body);
+    // Get raw body explicitly preserved by fastify-raw-body plugin
+    const rawBody = (request as any).rawBody || '';
     
     if (config.NODE_ENV === 'production' && !verifySignature(rawBody, signature)) {
       logger.warn('Webhook signature verification failed');
