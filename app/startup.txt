@@ -1,0 +1,41 @@
+﻿Γùç injected env (0) from .env // tip: Γîÿ enable debugging { debug: true }
+node : Γ¥î Invalid 
+environment variables: {
+At line:1 char:1
++ node dist/index.js > 
+startup.log 2>&1; 
+Get-Content startup.log | 
+Set- ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (Γ  
+  ¥î Invalid environmen   
+ t variables: {:String    
+) [], RemoteException
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+  _errors: [],
+  DATABASE_URL: { 
+_errors: [ 'Invalid 
+input: expected string, 
+received undefined' ] },
+  SHOPLINE_APP_KEY: { 
+_errors: [ 'Invalid 
+input: expected string, 
+received undefined' ] },
+  SHOPLINE_APP_SECRET: { 
+_errors: [ 'Invalid 
+input: expected string, 
+received undefined' ] },
+  HOST_URL: { _errors: [ 
+'Invalid input: expected 
+string, received 
+undefined' ] },
+  FRONTEND_URL: { 
+_errors: [ 'Invalid 
+input: expected string, 
+received undefined' ] }
+}

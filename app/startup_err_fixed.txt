@@ -1,0 +1,34 @@
+﻿Γùç injected env (0) from .env // tip: Γùê encrypted .env [www.dotenvx.com]
+node : 
+At line:1 char:150
++ ... ://test.com"; node 
+dist/index.js > 
+startup_err_fixed.log 
+2>&1; Get-Co ...
++                   ~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo        
+      : NotSpecified: (:  
+  String) [], RemoteExc   
+ eption
+    + FullyQualifiedError 
+   Id : NativeCommandErr  
+  or
+ 
+==========================
+========================
+Γ¥î CONFIGURATION ERROR: 
+Missing or invalid 
+environment variables
+==========================
+========================
+- FRONTEND_URL: Invalid 
+input: expected string, 
+received undefined
+==========================
+========================
+Please check your Render 
+Environment Variables 
+dashboard.
+

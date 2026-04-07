@@ -16,7 +16,22 @@ const envSchema = z.object({
 const parsed = envSchema.safeParse(process.env);
 
 if (!parsed.success) {
-  console.error('❌ Invalid environment variables:', parsed.error.format());
+  console.error('\n' + '='.repeat(50));
+  console.error('❌ CONFIGURATION ERROR: Missing or invalid environment variables');
+  console.error('='.repeat(50));
+  
+  const formatted = parsed.error.format();
+  Object.entries(formatted).forEach(([key, value]) => {
+    if (key !== '_errors') {
+      const fieldErrors = (value as any)._errors;
+      if (fieldErrors && fieldErrors.length > 0) {
+        console.error(`- ${key}: ${fieldErrors.join(', ')}`);
+      }
+    }
+  });
+  
+  console.error('='.repeat(50));
+  console.error('Please check your Render Environment Variables dashboard.\n');
   process.exit(1);
 }
 
